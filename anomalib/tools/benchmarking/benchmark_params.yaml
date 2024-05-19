@@ -1,0 +1,30 @@
+seed: 42
+compute_openvino: false
+hardware:
+  - gpu
+writer:
+  - wandb
+  - tensorboard
+  - csv
+grid_search:
+  dataset:
+    name: autovi
+    path: ../data/autovi
+    version: v0.6
+    task: classification
+    category:
+      - engine_wiring
+      - kitting_cart
+      - pipe_clip
+      - pipe_staple
+      - tank_screw
+      - tube_fastening
+      - underbody_pipes
+      - underbody_screw
+    image_size: [256]
+  model_name:
+    - padim
+    - dsr
+    - draem
+    - patchcore
+    - efficient_ad
